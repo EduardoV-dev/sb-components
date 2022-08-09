@@ -1,5 +1,5 @@
+/// <reference types="react" />
 import './my-label.css';
-
 export interface IProps {
     /** Capitalizes the label text */
     allCaps: boolean;
@@ -12,22 +12,5 @@ export interface IProps {
     /**  This is the size of the label */
     size: 'normal' | 'h1' | 'h2' | 'h3';
 }
-
-const MyLabel = ({
-    allCaps = false,
-    color = 'primary',
-    fontColor = '#5517ac',
-    label = 'No Label',
-    size = 'normal',
-}: IProps): JSX.Element => {
-    return (
-        <span
-            className={`label ${size} text-${color} ${allCaps && 'uppercase'}`}
-            style={{ color: fontColor }}
-        >
-            {label}
-        </span>
-    );
-};
-
+declare const MyLabel: ({ allCaps, color, fontColor, label, size, }: IProps) => JSX.Element;
 export default MyLabel;
